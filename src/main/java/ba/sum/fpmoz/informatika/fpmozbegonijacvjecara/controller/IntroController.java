@@ -1,0 +1,28 @@
+package ba.sum.fpmoz.informatika.fpmozbegonijacvjecara.controller;
+
+import ba.sum.fpmoz.informatika.fpmozbegonijacvjecara.Program;
+import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
+import javafx.scene.Node;
+import javafx.scene.control.Label;
+import javafx.stage.Stage;
+
+import java.io.IOException;
+
+public class IntroController {
+    @FXML
+    private Label welcomeText;
+
+    @FXML
+    protected void onHelloButtonClick() {
+        welcomeText.setText("Welcome to JavaFX Application!");
+    }
+
+
+    @FXML
+    protected void userAdministration (ActionEvent evt) throws IOException {
+        Stage stage = (Stage) ((Node) evt.getSource()).getScene().getWindow();
+        Program.swapScene(stage, "user-view.fxml", "Administracija korisnika");
+
+    }
+}
